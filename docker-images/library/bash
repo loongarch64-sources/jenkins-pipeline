@@ -1,0 +1,18 @@
+pipeline {
+    agent {
+        node {
+            label 'Host && (Loongnix-Server23.1 || OpenEuler24.03)'
+        }
+    }
+    triggers {
+        cron('* * * * *')
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello, World!'
+            }
+        }
+    }
+}
